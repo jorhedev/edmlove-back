@@ -5,6 +5,7 @@ const postCreateNews = async (req, res) => {
   try {
     // Desestructuración de los datos del cuerpo de la solicitud
     const {
+      id,
       title,
       description,
       introduction,
@@ -17,6 +18,7 @@ const postCreateNews = async (req, res) => {
 
     // Validar que todos los campos requeridos estén presentes
     if (
+      !id ||
       !title ||
       !description ||
       !introduction ||
@@ -33,6 +35,7 @@ const postCreateNews = async (req, res) => {
 
     // Crear una nueva instancia del modelo News
     const news = new News({
+      id,
       title,
       description,
       introduction,
