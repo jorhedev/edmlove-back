@@ -14,6 +14,7 @@ const postCreateNews = async (req, res) => {
       conclusion,
       author,
       image,
+      date,
     } = req.body;
     
     // Validar que todos los campos requeridos estén presentes
@@ -31,7 +32,8 @@ const postCreateNews = async (req, res) => {
       conclusion,
       author,
       image,
-      date: new Date(), // Asignar la fecha actual
+      date: date || new Date(),
+      // date: new Date(), // Asignar la fecha actual
     });
 
     // Guardar el documento en la base de datos
