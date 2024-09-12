@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 
 const newsSchema = new mongoose.Schema(
   {
+    id: {
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
@@ -47,5 +51,4 @@ const newsSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("News", newsSchema,  "news"); // Exporta el modelo y la colección
-
+module.exports = mongoose.model("News", newsSchema, "news"); // Exporta el modelo y la colección
